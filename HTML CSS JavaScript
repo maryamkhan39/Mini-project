@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maryam – Web Developer Intern</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Maryam</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm Maryam – Web Developer Intern</h1>
+    <p>Passionate about building responsive and interactive web experiences using HTML, CSS, and JavaScript.</p>
+    <a href="assets/maryam-cv.pdf" class="btn" download>Download CV</a>
+    <img src="assets/images/hero-placeholder.png" alt="Hero Image" class="hero-img">
+  </section>
+
+  <footer>
+    <p>© 2025 Maryam. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollToTop">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+---
+
+✅ about.html (About Me Page)
+
+<section class="about">
+  <h2>About Me</h2>
+  <img src="assets/images/profile.jpg" alt="Maryam Profile" class="profile-img">
+  <p>I’m Maryam, a passionate Web Developer Intern who loves creating clean and user-friendly websites.</p>
+  <p>I specialize in HTML, CSS, and JavaScript and enjoy learning new techniques to enhance user experiences.</p>
+  <p>I'm committed to growing as a front-end developer and building beautiful responsive web pages.</p>
+
+  <div class="skills">
+    <h3>Skills</h3>
+    <ul>
+      <li>HTML <span class="bar html"></span></li>
+      <li>CSS <span class="bar css"></span></li>
+      <li>JavaScript <span class="bar js"></span></li>
+    </ul>
+  </div>
+</section>
+
+
+---
+
+✅ projects.html (Projects Page)
+
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="assets/images/project1.png" alt="Project 1" />
+      <h3>Responsive Portfolio</h3>
+      <p>Built a modern portfolio using HTML, CSS, and JavaScript with responsive design.</p>
+      <a href="#">View</a>
+    </div>
+    <!-- Add 2–5 more cards similarly -->
+  </div>
+</section>
+
+
+---
+
+✅ contact.html (Contact Page)
+
+<section class="contact">
+  <h2>Get in Touch</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" id="name" required />
+    <input type="email" placeholder="Your Email" id="email" required />
+    <textarea placeholder="Your Message" id="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+---
+
+✅ style.css (Common Styling Snippet)
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.nav-links a:hover, .btn:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.hero-img, .profile-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+/* Add responsive queries, hover effects, and full layout styling */
+
+
+---
+
+✅ script.js (Interactivity)
+
+// Scroll-to-top button
+const btn = document.getElementById('scrollToTop');
+window.onscroll = function () {
+  btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+btn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// Form validation
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("All fields are required.");
+    e.preventDefault();
+  } else if (!email.includes("@")) {
+    alert("Enter a valid email.");
+    e.preventDefault();
+  }
+});
